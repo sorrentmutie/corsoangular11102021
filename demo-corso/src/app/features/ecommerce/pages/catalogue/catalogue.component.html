@@ -1,0 +1,15 @@
+<div *ngIf="selectedProduct === undefined; else showDetails">
+<h3>Catalogo Prodotti</h3>
+<app-products-list [products]="offeredProducts" (notify)="edit($event)"></app-products-list>
+</div>
+
+<ng-template #showDetails>
+  <app-product-details
+  (comebackEmitter) = "showTable($event)"
+  [product]="selectedProduct"></app-product-details>
+</ng-template>
+
+
+
+<!-- <h3>Prodotti non disponibili</h3>
+<app-products-list [products]="notAvailableProducts"></app-products-list> -->

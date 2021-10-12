@@ -1,0 +1,4 @@
+<p>my-async-pipe works!</p>
+<div *ngFor="let product of service.getProductsAsObservable() | async">
+  {{product?.name}}
+</div>

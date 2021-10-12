@@ -1,0 +1,11 @@
+<p>product-details works!</p>
+
+<div class="form-group" *ngIf="product">
+  <label for="product.name">Nome</label>
+  <input type="text" id="name" name="product.name"
+  class="form-control" [(ngModel)]="product.name">
+  {{product.name}}
+</div>
+
+
+<button (click)="comeback()" class="btn btn-primary">Torna Indietro</button>

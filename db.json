@@ -1,0 +1,39 @@
+{
+    "categories": [
+        {"id": 1, "name": "categoria 1"},
+        {"id": 2, "name": "categoria 2"}
+
+    ],
+    "products": [
+        {
+            "id": 1,
+            "categoryId": 1,
+            "name": "Prodotto 1",
+            "price": 50 ,
+            "category": "Elettrodomestici",
+            "availability": true,
+            "image": "https://www.beko.com/content/dam/italy-it-aem/italy-it-aemProductCatalog/product-images/7298243106-RCNE560E41ZXN/7298243106-LO3-20200729-133129.png",
+            "date": "2021-10-11"
+        },
+        {
+            "id": 2,
+            "categoryId": 1,
+            "name": "Prodotto 2",
+            "price": 150 ,
+            "category": "Elettrodomestici",
+            "availability": false,
+            "image": "https://www.beko.com/content/dam/italy-it-aem/italy-it-aemProductCatalog/product-images/7298243106-RCNE560E41ZXN/7298243106-LO3-20200729-133129.png",
+            "date": "2021-10-12"
+          },
+          {
+            "id": 3,
+            "categoryId": 2,
+            "name": "Prodotto 3",
+            "price": 250 ,
+            "category": "Elettrodomestici",
+            "availability": false,
+            "image": "https://www.beko.com/content/dam/italy-it-aem/italy-it-aemProductCatalog/product-images/7298243106-RCNE560E41ZXN/7298243106-LO3-20200729-133129.png",
+            "date": "2021-10-11"
+          }
+    ]
+  }

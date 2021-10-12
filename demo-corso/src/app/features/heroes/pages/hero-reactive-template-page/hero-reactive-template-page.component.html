@@ -1,0 +1,17 @@
+<form [formGroup]="formReattivoEroe" (ngSubmit)="submit()">
+
+  <div class="form-group">
+    <label for="nome">Nome</label>
+    <input formControlName="nome" class="form-control" name="nome" id="nome">
+
+    <div class="alert alert-danger" *ngIf="myNome.invalid && (myNome.dirty || myNome.touched)">
+      <div *ngIf="myNome.errors.required">CAMPO OBBLIGATORIO</div>
+      <div *ngIf="myNome.errors.minlength">LUNGHEZZA MINIMA: 4</div>
+      <div *ngIf="myNome.errors.mioValidatore">MIA VALIDAZIONE</div>
+    </div>
+
+  </div>
+
+
+  <button class="btn btn-success" type="submit" [disabled]="formReattivoEroe.invalid">SUBMIT</button>
+</form>

@@ -1,0 +1,33 @@
+<div *ngIf="products.length > 0; else bloccoElse">
+<p>Numero prodotti disponibili: {{products.length}}</p>
+
+<table class="table table-bordered table-striped table-hover">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Nome</th>
+      <th>Prezzo</th>
+      <th>Immagine</th>
+      <th>Data</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{product | transformSpecial}}</td>
+      <td>{{product.name |  transformName |  uppercase }}</td>
+      <td>{{product.price | currency: 'EUR'}}</td>
+      <td> <img src="{{product.image}}" width="50"> </td>
+      <td>{{product.date | date: 'dd/MM/yyyy'}}</td>
+      <td><button class="btn btn-primary" (click)="edit(product)">Modifica</button></td>
+    </tr>
+  </tbody>
+
+</table>
+
+
+</div>
+
+<ng-template #bloccoElse>
+  <p>Non ci sono prodotti disponibili</p>
+</ng-template>
