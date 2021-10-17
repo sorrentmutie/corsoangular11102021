@@ -15,10 +15,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FatherComponent } from './features/theory/components/father/father.component';
 import { SonComponent } from './features/theory/components/son/son.component';
 import { MyAsyncPipeComponent } from './features/theory/components/my-async-pipe/my-async-pipe.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RandomUsersPageComponent } from './features/randomusers/pages/random-users-page/random-users-page.component';
 import { HeroTemplatePageComponent } from './features/heroes/pages/hero-template-page/hero-template-page.component';
 import { HeroReactiveTemplatePageComponent } from './features/heroes/pages/hero-reactive-template-page/hero-reactive-template-page.component';
+import { NotFoundPageComponent } from './features/ui/not-found-page/not-found-page.component';
+import { WelcomeComponent } from './features/ui/welcome/welcome.component';
+import { MyInterceptor } from './shared/my.interceptor';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,9 @@ import { HeroReactiveTemplatePageComponent } from './features/heroes/pages/hero-
     MyAsyncPipeComponent,
     RandomUsersPageComponent,
     HeroTemplatePageComponent,
-    HeroReactiveTemplatePageComponent
+    HeroReactiveTemplatePageComponent,
+    NotFoundPageComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +49,9 @@ import { HeroReactiveTemplatePageComponent } from './features/heroes/pages/hero-
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS,useClass: MyInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
